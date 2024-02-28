@@ -1,0 +1,97 @@
+{
+    "filmList": {
+        "content":[
+            {
+                "id":999,
+                "year":1900,
+                "tle":"Movie Title",
+                "studios":["Studio Name"],
+                "producers":["Producer Name"],
+                "winner":true
+            },
+            {
+                "id":999,
+                "year":1900,
+                "tle":"Movie Title",
+                "studios":["Studio Name","Studio Name"],
+                "producers":["Producer Name"],
+                "winner":false
+            }
+        ],
+        "pageable":
+        {
+            "sort":
+            {
+                "sorted":false,
+                "unsorted":true
+            },
+            "pageSize":0,
+            "pageNumber":0,
+            "offset":0,
+            "paged":true,
+            "unpaged":false
+        },
+        "totalElements":999,
+        "last":false,
+        "totalPages":99,
+        "first":true,
+        "sort":
+        {
+            "sorted":false,
+            "unsorted":true
+        },
+        "number":0,
+        "numberOfElements":99,
+        "size":99
+    },
+    "yearsWithMostWinners": {
+        "years": [
+            {
+                "year": 9999,
+                "winnerCount": 99
+            },
+            {
+                "year": 9999,
+                "winnerCount": 99
+            }
+        ]
+    },
+    "studios": {
+        "studios": [
+            {
+                "name": "Studio Name 1",
+                "winCount": 9
+            },
+            {
+                "name": "Studio Name 2",
+                "winCount": 8
+            }
+        ]
+    },
+    "winningInterval": {
+        "min": [
+            {
+                "producer": "Producer Name",
+                "interval": 9,
+                "previousWin": 2018,
+                "followingWin": 2019
+            }
+            ],
+        "max": [
+            {
+                "producer": "Producer Name",
+                "interval": 99,
+                "previousWin": 1900,
+                "followingWin": 1999
+            }
+        ]
+    },
+    "movieOfTheYear": {
+        "id":99,
+        "year":1990,
+        "tle":"Movie Title",
+        "studios":["Studio Name"],
+        "producers":[" Producer Name "],
+        "winner":true
+    }
+}

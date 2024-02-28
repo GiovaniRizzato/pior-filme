@@ -1,0 +1,8 @@
+[
+    {
+        "id": "main",
+        "routes": [
+            "get-movie:success"
+        ]
+    }
+]
