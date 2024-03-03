@@ -7,7 +7,8 @@ import { MinAndMaxWinIntervalForProducers, Movie, StudioWinningCountList, YearWi
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = 'https://tools.texoit.com/backend-java/api/movies';
+  //private apiUrl = 'https://tools.texoit.com/backend-java/api/movies';
+  private apiUrl = 'http://localhost:3100/api/movies';
 
   constructor(private http: HttpClient) { }
 

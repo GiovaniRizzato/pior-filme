@@ -31,8 +31,8 @@ export interface WinIntervalForProducers {
 export interface Movie {
   id: string,
   year: number,
-  tittle: string,
-  studio: string[],
+  title: string,
+  studios: string[],
   producers: string[],
   winner: boolean
 }
