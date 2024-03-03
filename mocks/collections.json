@@ -2,7 +2,7 @@
     {
         "id": "main",
         "routes": [
-            "get-movie:success"
+            "get-years-with-most-winners:filmList"
         ]
     }
 ]

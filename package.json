@@ -32,6 +32,7 @@
     "@angular/cli": "~15.2.2",
     "@angular/compiler-cli": "^15.2.0",
     "@mocks-server/main": "^3.2.0",
+    "path-to-regexp": "^6.2.1",
     "@testing-library/angular": "^13.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "jest": "^29.5.0",
