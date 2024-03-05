@@ -1,31 +1,33 @@
-<mat-table [dataSource]="dataSource">
-    <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="title">
-        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="year">
-        <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="studios">
-        <mat-header-cell *matHeaderCellDef> Studios </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.studios }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="producers">
-        <mat-header-cell *matHeaderCellDef> Producers </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.producers }} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="winner">
-        <mat-header-cell *matHeaderCellDef> Did it win? </mat-header-cell>
-        <mat-cell *matCellDef="let movie"> {{ movie.winner }} </mat-cell>
-    </ng-container>
+<div>
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="year">
+            <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="studios">
+            <mat-header-cell *matHeaderCellDef> Studios </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.studios }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="producers">
+            <mat-header-cell *matHeaderCellDef> Producers </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.producers }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="winner">
+            <mat-header-cell *matHeaderCellDef> Did it win? </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.winner }} </mat-cell>
+        </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
-  
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
+</div>

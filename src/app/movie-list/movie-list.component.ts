@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
@@ -9,7 +9,7 @@ import { Movie } from '../movie-service/movie-models';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent implements AfterViewInit {
+export class MovieListComponent implements OnInit{
   displayedColumns: string[] = ['id', 'title', 'year', 'studios', 'producers', 'winner'];
   dataSource = new MatTableDataSource<Movie>([]);
 
@@ -17,17 +17,14 @@ export class MovieListComponent implements AfterViewInit {
 
   constructor(private readonly movieService: MovieService) {}
 
-  ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe((movies) => {
-      this.setMovies(movies);
-    });
-  }
-
-  ngAfterViewInit() {
+  ngOnInit() {
+    this.resetMovies();
     this.dataSource.paginator = this.paginator;
   }
 
-  setMovies(movies: Movie[]) {
-    this.dataSource.data = movies;
+  resetMovies() {
+    this.movieService.getAllMovies(this.paginator?.pageIndex ? this.paginator.pageIndex : 0, this.paginator?.pageSize ? this.paginator?.pageSize : 5, true, 2018).subscribe((movies) => {
+      this.dataSource.data = movies.content;
+    });
   }
 }

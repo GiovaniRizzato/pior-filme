@@ -1,1 +1,35 @@
-<p>dashboard works!</p>
+<div>
+    <div class="multipleWinnerTableBlock tableBlock">
+        <h3>List of years with multiple winners</h3>
+        <mat-table [dataSource]="multipleWinnerTableDataSource">
+            <ng-container matColumnDef="year">
+                <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+                <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="winnerCount">
+                <mat-header-cell *matHeaderCellDef> Winn Count </mat-header-cell>
+                <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="multipleWinnerTableColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: multipleWinnerTableColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+    <div class="studiosTableBlock tableBlock">
+        <h3>Top {{topStudiosTableDataSource.data.length}} studios with winners</h3>
+        <mat-table [dataSource]="topStudiosTableDataSource">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="winnerCount">
+                <mat-header-cell *matHeaderCellDef> Winn Count </mat-header-cell>
+                <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="topStudiosTableColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: topStudiosTableColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>
