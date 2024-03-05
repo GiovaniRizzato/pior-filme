@@ -17,8 +17,8 @@ export interface StudioWinningCount {
 }
 
 export interface MinAndMaxWinIntervalForProducers {
-  min: WinIntervalForProducers,
-  max: WinIntervalForProducers
+  min: WinIntervalForProducers[],
+  max: WinIntervalForProducers[]
 }
 
 export interface WinIntervalForProducers {

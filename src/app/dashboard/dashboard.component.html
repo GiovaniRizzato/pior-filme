@@ -7,7 +7,7 @@
                 <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="winnerCount">
-                <mat-header-cell *matHeaderCellDef> Winn Count </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
                 <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
             </ng-container>
 
@@ -23,13 +23,64 @@
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
                 <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
             </ng-container>
-            <ng-container matColumnDef="winnerCount">
-                <mat-header-cell *matHeaderCellDef> Winn Count </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
+            <ng-container matColumnDef="winCount">
+                <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
+                <mat-cell *matCellDef="let movie"> {{ movie.winCount }} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="topStudiosTableColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: topStudiosTableColumns;"></mat-row>
         </mat-table>
+    </div>
+    
+    <div class="producerIntervalTableBlock tableBlock">
+        <h3>Producers with longest and shortest intervals between wins</h3>
+        <div>
+            <h4>Maximun</h4>
+            <mat-table [dataSource]="maxProducerIntervalTableDataSource">
+                <ng-container matColumnDef="producer">
+                    <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="interval">
+                    <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="previousWin">
+                    <mat-header-cell *matHeaderCellDef> Previous Win </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="followingWin">
+                    <mat-header-cell *matHeaderCellDef> Following Win </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="maxProducerIntervalTableColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: maxProducerIntervalTableColumns;"></mat-row>
+            </mat-table>
+
+            <h4>Minimum</h4>
+            <mat-table [dataSource]="minProducerIntervalTableDataSource">
+                <ng-container matColumnDef="producer">
+                    <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="interval">
+                    <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="previousWin">
+                    <mat-header-cell *matHeaderCellDef> Previous Win </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="followingWin">
+                    <mat-header-cell *matHeaderCellDef> Following Win </mat-header-cell>
+                    <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="minProducerIntervalTableColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: minProducerIntervalTableColumns;"></mat-row>
+            </mat-table>
+        </div>
     </div>
 </div>
