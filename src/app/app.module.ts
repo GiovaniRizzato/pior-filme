@@ -9,6 +9,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],

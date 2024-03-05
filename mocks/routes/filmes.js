@@ -30,8 +30,11 @@ module.exports = [
                                     break;
                             }
                         } else {
-                            //DATA.movieOfTheYear
-                            res.send(DATA.filmList);
+                            if(req.param('page')) {
+                                res.send(DATA.filmList);
+                            } else {
+                                res.send(DATA.movieOfTheYear);
+                            }
                         }
                     },
                   },

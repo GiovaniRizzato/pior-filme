@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudioWinningCount, WinIntervalForProducers, YearWinningCount } from '../movie-service/movie-models';
+import { Movie, StudioWinningCount, WinIntervalForProducers, YearWinningCount } from '../movie-service/movie-models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
 
@@ -20,6 +20,11 @@ export class DashboardComponent implements OnInit{
   minProducerIntervalTableColumns: string[] = ['producer', 'interval', 'previousWin', 'followingWin'];
   minProducerIntervalTableDataSource = new MatTableDataSource<WinIntervalForProducers>([]);
 
+  movieByYeayTableColumns: string[] = ['id', 'year', 'title'];
+  movieByYeayTableDataSource = new MatTableDataSource<Movie>([]);
+
+  searchedYear: number = 0;
+
   constructor (private readonly movieService: MovieService) {}
 
   ngOnInit() {
@@ -29,21 +34,27 @@ export class DashboardComponent implements OnInit{
   }
 
   resetMultipleWinnerTable() {
-    this.movieService.getYearsWithMultipleWinners().subscribe((data) => {
+    this.movieService.getYearsWithMultipleWinners().subscribe(data => {
       this.multipleWinnerTableDataSource.data = data.years;
     });
   }
 
   resetTopStudiosTable() {
-    this.movieService.getStudiosWithWinCount().subscribe((data) => {
+    this.movieService.getStudiosWithWinCount().subscribe(data => {
       this.topStudiosTableDataSource.data = data.studios;
     });
   }
 
   resetProducerIntervalTable() {
-    this.movieService.getWinIntervalForProducers().subscribe((data) => {
+    this.movieService.getWinIntervalForProducers().subscribe(data => {
       this.maxProducerIntervalTableDataSource.data = data.max;
       this.minProducerIntervalTableDataSource.data = data.min;
     });
+  }
+
+  searchMovieByYear(year: number) {
+    this.movieService.getWinnersByYear(true, year).subscribe(data => {
+      this.movieByYeayTableDataSource.data = [data];
+    })
   }
 }
