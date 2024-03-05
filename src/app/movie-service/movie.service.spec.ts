@@ -23,6 +23,12 @@ describe('MovieService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should get all movies list', () => {
+    service.getAllMovies(9, 99, true, 2018).subscribe(() => {});
+    const req = httpMock.expectOne('https://tools.texoit.com/backend-java/api/movies?page=9&size=99&winner=true&year=2018');
+    expect(req.request.method).toBe('GET');
+  });
+
   it('should get the year winning count list', () => {
     service.getYearsWithMultipleWinners().subscribe(() => {});
     const req = httpMock.expectOne('https://tools.texoit.com/backend-java/api/movies?projection=years-with-multiple-winners');
@@ -42,7 +48,7 @@ describe('MovieService', () => {
   });
 
   it('should getWinnersByYear', () => {
-    service.getWinnersByYear(1993).subscribe(() => {});
+    service.getWinnersByYear(true, 1993).subscribe(() => {});
     const req = httpMock.expectOne('https://tools.texoit.com/backend-java/api/movies?winner=true&year=1993');
     expect(req.request.method).toBe('GET');
   });

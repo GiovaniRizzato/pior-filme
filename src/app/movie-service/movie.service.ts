@@ -13,8 +13,8 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   // Método para obter a lista de todos os filmes
-  getAllMovies(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getAllMovies(page: number, size: number, isWinner: boolean, year: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}?page=${page}&size=${size}&winner=${isWinner}&year=${year}`);
   }
 
   // Método para obter os anos com mais de um vencedor
@@ -33,7 +33,7 @@ export class MovieService {
   }
 
   // Método para obter os vencedores de determinado ano
-  getWinnersByYear(year: number): Observable<Movie> {
-    return this.http.get<Movie>(`${this.apiUrl}?winner=true&year=${year}`);
+  getWinnersByYear(isWinner: boolean, year: number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.apiUrl}?winner=${isWinner}&year=${year}`);
   }
 }
