@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, ViewChild} from '@angular/core';
 import { Movie, MoviesPageable } from '../movie-service/movie-models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
-import { MatPaginator } from '@angular/material/paginator';
-import { catchError, map, of, startWith, switchMap } from 'rxjs';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Observable, map, pipe, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'movie-list-component',
@@ -21,23 +21,21 @@ export class MovieListComponent implements AfterViewInit{
   dataSource = new MatTableDataSource<Movie>();
   isLoading = true;
 
+  filters: {
+    year?: number,
+    isWinner?: boolean
+  } = {}
+
   constructor(public movieService: MovieService) {}
 
   @ViewChild('paginator') paginator!: MatPaginator;
 
-  getTableData$(pageIndex: number, pageSize: number) {
-    return this.movieService.getAllMovies(pageIndex, pageSize);
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-
-    this.paginator.page
-    .pipe(
+  private resetTable$() {
+    return pipe(
       startWith({}),
       switchMap(() => {
         this.isLoading = true;
-        return this.getTableData$(this.paginator.pageIndex + 1, this.paginator.pageSize);
+        return this.movieService.getAllMovies(this.paginator.pageIndex + 1, this.paginator.pageSize, this.filters.isWinner, this.filters.year)
       }),
       map(movieData => {
         if (movieData == null) return [];
@@ -45,9 +43,25 @@ export class MovieListComponent implements AfterViewInit{
         this.isLoading = false;
         return movieData.content;
       })
-    ).subscribe(movieData => {
-      this.MovieData = movieData;
-      this.dataSource = new MatTableDataSource(this.MovieData);
-    });
+    )
+  }
+
+  ngAfterViewInit() {
+    this.paginator.page
+      .pipe(this.resetTable$())
+      .subscribe(movieData => {
+        this.MovieData = movieData;
+        this.dataSource = new MatTableDataSource(this.MovieData);
+      });
+    this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter() {
+    new Observable()
+      .pipe(this.resetTable$())
+      .subscribe(movieData => {
+        this.MovieData = movieData;
+        this.dataSource = new MatTableDataSource(this.MovieData);
+      });
   }
 }

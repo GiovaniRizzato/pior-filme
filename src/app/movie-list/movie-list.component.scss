@@ -1,0 +1,13 @@
+.header-with-inpupt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-header {
+    width: 100%;
+}
+
+.form-field {
+    width: calc(100% - 50px);
+}

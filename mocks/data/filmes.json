@@ -4,7 +4,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name"],
                 "producers":["Producer Name"],
                 "winner":true
@@ -12,7 +12,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -20,7 +20,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -28,7 +28,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -36,7 +36,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -44,7 +44,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -52,7 +52,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false
@@ -60,7 +60,7 @@
             {
                 "id":999,
                 "year":1900,
-                "tle":"Movie Title",
+                "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
                 "producers":["Producer Name"],
                 "winner":false

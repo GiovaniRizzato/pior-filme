@@ -12,12 +12,18 @@
         </ng-container>
         <!-- Year -->
         <ng-container matColumnDef="year">
-            <th mat-header-cell *matHeaderCellDef> Year 
-                <mat-form-field>
-                    <input matInput class="form-field" placeholder="Year">
-                </mat-form-field>
-            </th>
-            <td mat-cell *matCellDef="let movie"> {{movie.year}} </td>
+            <mat-header-cell *matHeaderCellDef>
+                <div class="header-with-inpupt">
+                    <span>Year</span>
+                    <span class="input-header">
+                        <input matInput [(ngModel)]="filters.year" class="form-field" type="number" placeholder="Filter by year">
+                        <button mat-icon-button aria-label="Search" (click)="applyFilter()">
+                            <mat-icon>find_in_page</mat-icon>
+                        </button>
+                    </span>
+                </div>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{movie.year}} </mat-cell>
         </ng-container>
         <!-- Studio -->
         <ng-container matColumnDef="studios">
@@ -31,12 +37,19 @@
         </ng-container>
         <!-- Winner -->
         <ng-container matColumnDef="winner">
-            <th mat-header-cell *matHeaderCellDef> Did it win? 
-                <mat-form-field>
-                    <input matInput class="form-field" placeholder="Year">
-                </mat-form-field>
-            </th>
-            <td mat-cell *matCellDef="let movie"> {{movie.winner}} </td>
+            <mat-header-cell *matHeaderCellDef>
+                <div class="header-with-inpupt">
+                    <span>Did it win?</span>
+                    <span class="input-header">
+                        <select class="form-field" [(ngModel)]="filters.isWinner" (change)="applyFilter()">
+                            <option value=>Yes/No</option>
+                            <option value=true>Yes</option>
+                            <option value=false>No</option>
+                        </select>
+                    </span>
+                </div>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{movie.winner}} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
