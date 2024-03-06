@@ -1,30 +1,53 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { AfterViewInit, Component, ViewChild} from '@angular/core';
+import { Movie, MoviesPageable } from '../movie-service/movie-models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
-import { Movie } from '../movie-service/movie-models';
+import { MatPaginator } from '@angular/material/paginator';
+import { catchError, map, of, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'movie-list-component',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent implements OnInit{
-  displayedColumns: string[] = ['id', 'title', 'year', 'studios', 'producers', 'winner'];
-  dataSource = new MatTableDataSource<Movie>([]);
+export class MovieListComponent implements AfterViewInit{
+  displayedColumns = ['id', 'title', 'year', 'producers', 'winner'];
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  movieTable: MoviesPageable = {} as MoviesPageable;
 
-  constructor(private readonly movieService: MovieService) {}
+  totalData: number = 0;
+  MovieData: Movie[] = [];
 
-  ngOnInit() {
-    this.resetMovies();
-    this.dataSource.paginator = this.paginator;
+  dataSource = new MatTableDataSource<Movie>();
+  isLoading = true;
+
+  constructor(public movieService: MovieService) {}
+
+  @ViewChild('paginator') paginator!: MatPaginator;
+
+  getTableData$(pageIndex: number, pageSize: number) {
+    return this.movieService.getAllMovies(pageIndex, pageSize);
   }
 
-  resetMovies() {
-    this.movieService.getAllMovies(this.paginator?.pageIndex ? this.paginator.pageIndex : 0, this.paginator?.pageSize ? this.paginator?.pageSize : 5, true, 2018).subscribe((movies) => {
-      this.dataSource.data = movies.content;
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+
+    this.paginator.page
+    .pipe(
+      startWith({}),
+      switchMap(() => {
+        this.isLoading = true;
+        return this.getTableData$(this.paginator.pageIndex + 1, this.paginator.pageSize);
+      }),
+      map(movieData => {
+        if (movieData == null) return [];
+        this.totalData = movieData.totalElements ? movieData.totalElements : 0;
+        this.isLoading = false;
+        return movieData.content;
+      })
+    ).subscribe(movieData => {
+      this.MovieData = movieData;
+      this.dataSource = new MatTableDataSource(this.MovieData);
     });
   }
 }

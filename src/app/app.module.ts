@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
+    MatProgressBarModule,
     FormsModule,
     MatInputModule,
     MatIconModule,

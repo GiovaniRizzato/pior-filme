@@ -24,7 +24,13 @@ describe('MovieService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get all movies list', () => {
+  it('should get all movies list without all params', () => {
+    service.getAllMovies(9, 99).subscribe(() => {});
+    const req = httpMock.expectOne(`${environment.apiUrl}?page=9&size=99`);
+    expect(req.request.method).toBe('GET');
+  });
+
+  it('should get all movies list with all params', () => {
     service.getAllMovies(9, 99, true, 2018).subscribe(() => {});
     const req = httpMock.expectOne(`${environment.apiUrl}?page=9&size=99&winner=true&year=2018`);
     expect(req.request.method).toBe('GET');
