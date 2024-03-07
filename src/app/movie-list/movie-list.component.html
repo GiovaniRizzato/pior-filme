@@ -17,9 +17,7 @@
                     <span>Year</span>
                     <span class="input-header">
                         <input matInput [(ngModel)]="filters.year" class="form-field" type="number" placeholder="Filter by year">
-                        <button mat-icon-button aria-label="Search" (click)="applyFilter()">
-                            <mat-icon>find_in_page</mat-icon>
-                        </button>
+                        <mat-icon role="button" (click)="applyFilter()" class="icon-button" aria-label="Search">find_in_page</mat-icon>
                     </span>
                 </div>
             </mat-header-cell>
@@ -42,7 +40,7 @@
                     <span>Did it win?</span>
                     <span class="input-header">
                         <select class="form-field" [(ngModel)]="filters.isWinner" (change)="applyFilter()">
-                            <option value=>Yes/No</option>
+                            <option value=undefined>Yes/No</option>
                             <option value=true>Yes</option>
                             <option value=false>No</option>
                         </select>
