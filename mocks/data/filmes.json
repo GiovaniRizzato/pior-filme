@@ -137,7 +137,7 @@
     "movieOfTheYear": {
         "id":99,
         "year":1990,
-        "tle":"Movie Title",
+        "title":"Movie Title",
         "studios":["Studio Name"],
         "producers":[" Producer Name "],
         "winner":true
