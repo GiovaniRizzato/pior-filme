@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit{
   movieByYeayTableColumns: string[] = ['id', 'year', 'title'];
   movieByYeayTableDataSource = new MatTableDataSource<Movie>([]);
 
-  searchedYear: number = 0;
+  searchedYear!: number;
 
   constructor (private readonly movieService: MovieService) {}
 
@@ -53,8 +53,10 @@ export class DashboardComponent implements OnInit{
   }
 
   searchMovieByYear(year: number) {
-    this.movieService.getWinnersByYear(true, year).subscribe(data => {
-      this.movieByYeayTableDataSource.data = [data];
-    })
+    if(year) {
+      this.movieService.getWinnersByYear(true, year).subscribe(data => {
+        this.movieByYeayTableDataSource.data = [data];
+      })
+    }
   }
 }
