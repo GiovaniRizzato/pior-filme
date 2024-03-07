@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, RenderResult } from '@testing-library/angular'
+import { AppModule } from '../app.module';
+import userEvent from '@testing-library/user-event'
 import { SidebarComponent } from './sidebar.component';
 
-describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
+
+describe('MovieListComponent', () => {
+  let component: RenderResult<SidebarComponent, SidebarComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+    component = await render(SidebarComponent, {
+      imports: [
+        AppModule
+      ],
     })
-    .compileComponents();
+  })
 
-    fixture = TestBed.createComponent(SidebarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  
+  it('should be created', () => { 
     expect(component).toBeTruthy();
   });
 });
