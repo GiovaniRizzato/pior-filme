@@ -4,7 +4,7 @@
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    width: 200px;
+    width: 10%;
     overflow: auto;
 }
 
@@ -31,12 +31,5 @@
     }
     div.content {
         margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
     }
 }
