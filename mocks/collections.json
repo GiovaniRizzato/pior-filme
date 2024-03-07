@@ -2,7 +2,7 @@
     {
         "id": "main",
         "routes": [
-            "get-years-with-most-winners:success"
+            "get-movies:success"
         ]
     }
 ]

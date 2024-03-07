@@ -2,7 +2,7 @@ const DATA = require("../data/filmes.json");
 
 module.exports = [
     {
-        id: "get-years-with-most-winners",
+        id: "get-movies",
         url: "/api/movies",
         method: "GET",
         variants: [
@@ -13,7 +13,7 @@ module.exports = [
                     middleware: (req, res, next, core) => {
                         core.logger.info("Request received!");
                         res.status(200);
-                        const projection = req.param('projection');
+                        const projection = req.query.projection;
                         if (projection) {
                             switch(projection) {
                                 case "years-with-multiple-winners":
@@ -30,7 +30,7 @@ module.exports = [
                                     break;
                             }
                         } else {
-                            if(req.param('page')) {
+                            if(req.query.page) {
                                 res.send(DATA.filmList);
                             } else {
                                 res.send(DATA.movieOfTheYear);
