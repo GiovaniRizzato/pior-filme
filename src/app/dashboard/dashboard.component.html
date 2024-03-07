@@ -1,6 +1,6 @@
 <div class="table-row">
     <div class="multiple-winner-table-block table-block">
-        <h3>List of years with multiple winners</h3>
+        <h2>List of years with multiple winners</h2>
         <mat-table [dataSource]="multipleWinnerTableDataSource">
             <ng-container matColumnDef="year">
                 <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="studios-table-block table-block">
-        <h3>Top {{topStudiosTableDataSource.data.length}} studios with winners</h3>
+        <h2>Top {{topStudiosTableDataSource.data.length}} studios with winners</h2>
         <mat-table [dataSource]="topStudiosTableDataSource">
             <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
@@ -36,9 +36,9 @@
 
 <div class="table-row">
     <div class="producer-interval-table-block table-block">
-        <h3>Producers with longest and shortest intervals between wins</h3>
+        <h2>Producers with longest and shortest intervals between wins</h2>
         <div>
-            <h4>Maximun</h4>
+            <h3>Maximun</h3>
             <mat-table [dataSource]="maxProducerIntervalTableDataSource">
                 <ng-container matColumnDef="producer">
                     <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
@@ -61,7 +61,7 @@
                 <mat-row *matRowDef="let row; columns: maxProducerIntervalTableColumns;"></mat-row>
             </mat-table>
 
-            <h4>Minimum</h4>
+            <h3>Minimum</h3>
             <mat-table [dataSource]="minProducerIntervalTableDataSource">
                 <ng-container matColumnDef="producer">
                     <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
@@ -87,7 +87,7 @@
     </div>
 
     <div class="winner-by-year-table-block table-block">
-        <h3>List movie winner by year</h3>
+        <h2>List movie winner by year</h2>
         <mat-form-field class="example-form-field">
             <mat-label>Search by year</mat-label>
             <input matInput type="number" [(ngModel)]="searchedYear">
