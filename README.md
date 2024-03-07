@@ -1,6 +1,6 @@
 # Raspberry Award Tracking System
 
-Bem-vindo ao repositório do projeto Raspberry Award Tracking System! Este projeto consiste em solução em Angular desenvolvida para visualização de estaticas dos *Raspberry Award*, confome a especificação presenta na [Documentação](documentacao\Especificação.pdf).
+Bem-vindo ao repositório do projeto Raspberry Award Tracking System! Este projeto consiste em solução em Angular desenvolvida para visualização de estaticas dos *Raspberry Award*, confome a especificação presenta na [Documentação](documentacao/Especificação.pdf).
 
 ## Tecnologias Utilizadas 🛠️
 
@@ -34,7 +34,7 @@ Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
    ```bash
    git clone https://github.com/GiovaniRizzato/pior-filme-frontend
    ```
-2. Rodar o servidor em mockado com o comando: (todas as respontas do "servidor" serão prefeitas e não há processamento destas, para mais informações de como funciona visite https://www.mocks-server.org/) 
+2. Rodar o servidor em mockado com o comando: (todas as respontas do "servidor" serão pré-feitas e não há processamento destas, para mais informações de como funciona visite https://www.mocks-server.org/) 
 
    ```bash
    npm run mocks
