@@ -1,5 +1,5 @@
-<div>
-    <div class="multipleWinnerTableBlock tableBlock">
+<div class="table-row">
+    <div class="multiple-winner-table-block table-block">
         <h3>List of years with multiple winners</h3>
         <mat-table [dataSource]="multipleWinnerTableDataSource">
             <ng-container matColumnDef="year">
@@ -16,7 +16,7 @@
         </mat-table>
     </div>
 
-    <div class="studiosTableBlock tableBlock">
+    <div class="studios-table-block table-block">
         <h3>Top {{topStudiosTableDataSource.data.length}} studios with winners</h3>
         <mat-table [dataSource]="topStudiosTableDataSource">
             <ng-container matColumnDef="name">
@@ -32,8 +32,10 @@
             <mat-row *matRowDef="let row; columns: topStudiosTableColumns;"></mat-row>
         </mat-table>
     </div>
-    
-    <div class="producerIntervalTableBlock tableBlock">
+</div>
+
+<div class="table-row">
+    <div class="producer-interval-table-block table-block">
         <h3>Producers with longest and shortest intervals between wins</h3>
         <div>
             <h4>Maximun</h4>
@@ -84,7 +86,7 @@
         </div>
     </div>
 
-    <div class="winnerByYearTableBlock tableBlock">
+    <div class="winner-by-year-table-block table-block">
         <h3>List movie winner by year</h3>
         <mat-form-field class="example-form-field">
             <mat-label>Search by year</mat-label>

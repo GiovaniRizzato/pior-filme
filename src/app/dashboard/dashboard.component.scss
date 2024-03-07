@@ -1,0 +1,11 @@
+.table-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-block {
+    min-width: 25%;
+    width: 45%;
+    padding: 16px;
+}
