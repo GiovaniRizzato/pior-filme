@@ -4,7 +4,7 @@ import { Mock } from 'ts-mockery'
 import { MovieService } from '../movie-service/movie.service';
 import { AppModule } from '../app.module';
 import { Movie, MoviesPageable } from '../movie-service/movie-models';
-import userEvent, { PointerEventsCheckLevel } from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event'
 import { of } from 'rxjs';
 
 describe('MovieListComponent', () => {
