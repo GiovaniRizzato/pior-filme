@@ -6,7 +6,7 @@
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name"],
-                "producers":["Producer Name"],
+                "producers":["Producer Name", "Producer Name 2", "Producer Name 3"],
                 "winner":true
             },
             {

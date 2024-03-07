@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { Movie, MoviesPageable } from '../movie-service/movie-models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
@@ -10,15 +10,12 @@ import { Observable, map, pipe, startWith, switchMap } from 'rxjs';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
-export class MovieListComponent implements AfterViewInit{
+export class MovieListComponent implements OnInit, AfterViewInit{
   displayedColumns = ['id', 'title', 'year', 'producers', 'winner'];
-
   movieTable: MoviesPageable = {} as MoviesPageable;
-
-  totalData: number = 0;
-  MovieData: Movie[] = [];
-
   dataSource = new MatTableDataSource<Movie>();
+  totalData: number = 0;
+
   isLoading = true;
 
   filters: {
@@ -30,12 +27,12 @@ export class MovieListComponent implements AfterViewInit{
 
   @ViewChild('paginator') paginator!: MatPaginator;
 
-  private resetTable$() {
+  private resetTable$(pageIndex: number = this.paginator.pageIndex + 1, pageSize: number = this.paginator.pageSize) {
     return pipe(
       startWith({}),
       switchMap(() => {
         this.isLoading = true;
-        return this.movieService.getAllMovies(this.paginator.pageIndex + 1, this.paginator.pageSize, this.filters.isWinner, this.filters.year)
+        return this.movieService.getAllMovies(pageIndex, pageSize, this.filters.isWinner, this.filters.year)
       }),
       map(movieData => {
         if (movieData == null) return [];
@@ -46,13 +43,15 @@ export class MovieListComponent implements AfterViewInit{
     )
   }
 
-  ngAfterViewInit() {
-    this.paginator.page
-      .pipe(this.resetTable$())
+  ngOnInit() {
+    new Observable()
+      .pipe(this.resetTable$(0, 3))
       .subscribe(movieData => {
-        this.MovieData = movieData;
-        this.dataSource = new MatTableDataSource(this.MovieData);
+        this.dataSource = new MatTableDataSource(movieData);
       });
+  }
+
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
@@ -60,8 +59,7 @@ export class MovieListComponent implements AfterViewInit{
     new Observable()
       .pipe(this.resetTable$())
       .subscribe(movieData => {
-        this.MovieData = movieData;
-        this.dataSource = new MatTableDataSource(this.MovieData);
+        this.dataSource = new MatTableDataSource(movieData);
       });
   }
 }
