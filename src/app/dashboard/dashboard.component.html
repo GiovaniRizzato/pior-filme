@@ -1,7 +1,7 @@
 <div class="table-row">
     <div class="multiple-winner-table-block table-block">
-        <h2>List of years with multiple winners</h2>
-        <mat-table [dataSource]="multipleWinnerTableDataSource">
+        <h2 id="multiple-winner-table-label">List of years with multiple winners</h2>
+        <mat-table [dataSource]="multipleWinnerTableDataSource" [attr.aria-labelledby]="'multiple-winner-table-label'">
             <ng-container matColumnDef="year">
                 <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
                 <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
@@ -17,8 +17,8 @@
     </div>
 
     <div class="studios-table-block table-block">
-        <h2>Top {{topStudiosTableDataSource.data.length}} studios with winners</h2>
-        <mat-table [dataSource]="topStudiosTableDataSource">
+        <h2 id="studios-table-label">Top {{topStudiosTableDataSource.data.length}} studios with winners</h2>
+        <mat-table [dataSource]="topStudiosTableDataSource" [attr.aria-labelledby]="'studios-table-label'">
             <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
                 <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
@@ -36,10 +36,10 @@
 
 <div class="table-row">
     <div class="producer-interval-table-block table-block">
-        <h2>Producers with longest and shortest intervals between wins</h2>
+        <h2 id="producer-interval-table-label">Producers with longest and shortest intervals between wins</h2>
         <div>
-            <h3>Maximun</h3>
-            <mat-table [dataSource]="maxProducerIntervalTableDataSource">
+            <h3 id="maximum-label">Maximun</h3>
+            <mat-table [dataSource]="maxProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label maximum-label'">
                 <ng-container matColumnDef="producer">
                     <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
@@ -61,8 +61,8 @@
                 <mat-row *matRowDef="let row; columns: maxProducerIntervalTableColumns;"></mat-row>
             </mat-table>
 
-            <h3>Minimum</h3>
-            <mat-table [dataSource]="minProducerIntervalTableDataSource">
+            <h3 id="minimum-label">Minimum</h3>
+            <mat-table [dataSource]="minProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label minimum-label'">
                 <ng-container matColumnDef="producer">
                     <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
@@ -87,16 +87,14 @@
     </div>
 
     <div class="winner-by-year-table-block table-block">
-        <h2>List movie winner by year</h2>
+        <h2 id="winner-by-year-table-label">List movie winner by year</h2>
         <mat-form-field class="example-form-field">
-            <mat-label>Search by year</mat-label>
-            <input matInput type="number" [(ngModel)]="searchedYear">
-                <button matSuffix mat-icon-button aria-label="Search" (click)="searchMovieByYear(searchedYear)">
-                    <mat-icon>find_in_page</mat-icon>
-                </button>
+            <mat-label id="winner-by-year-input">Search by year</mat-label>
+            <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear">
+            <mat-icon role="button" (click)="searchMovieByYear(searchedYear)" class="icon-button" aria-label="Make the search">find_in_page</mat-icon>
         </mat-form-field>
 
-        <mat-table [dataSource]="movieByYeayTableDataSource">
+        <mat-table [dataSource]="movieByYeayTableDataSource" [attr.aria-labelledby]="'winner-by-year-table-label'">
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
                 <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
