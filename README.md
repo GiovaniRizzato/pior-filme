@@ -2,7 +2,7 @@
 
 Bem-vindo ao repositório do projeto Raspberry Award Tracking System! Este projeto consiste em solução em Angular desenvolvida para visualização de estaticas dos *Raspberry Award*, confome a especificação presenta na [Documentação](documentacao/Especificação.pdf).
 
-## <a name="build"></a> Tecnologias Utilizadas :hammer_and_wrench:
+## Tecnologias Utilizadas :hammer_and_wrench:
 
 ![Typescript](https://img.shields.io/badge/typescript-%2300273f.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Angular](https://img.shields.io/badge/angular-%23c3002f.svg?style=for-the-badge&logo=angular&logoColor=white)
@@ -28,7 +28,7 @@ Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
 Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
-1. Siga os passos em [Contruindo a base da solução](#build)
+1. Siga os passos em [Contruindo a base da solução](#contruindo-a-base-da-solução-open_file_folder)
 2. Rode a aplicação:
 
    ```bash
@@ -40,7 +40,7 @@ Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
 Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
 
-1. Siga os passos em [Contruindo a base da solução](#build)
+1. Siga os passos em [Contruindo a base da solução](#contruindo-a-base-da-solução-open_file_folder)
 2. Rode o servidor mockado:
 
    ```bash
