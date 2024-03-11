@@ -48,7 +48,6 @@ Para configurar o ambiente de desenvolvimento, siga os passos abaixo:
    ``` 
    obs.: Todas as respontas do "servidor" serão estaticas e não mudam idependente das entradas, para mais informações de como funciona visite https://www.mocks-server.org/ 
 3. Com o "servidor" funcionando, em outro prompt execulte a solução em configuração de desenvolvimento: 
-
     ```bash
     npm run start:dev
     ```
