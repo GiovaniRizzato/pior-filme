@@ -108,8 +108,6 @@ describe('MovieListComponent', () => {
     it('should display pagination information', () => {
       expect(component.getByText('1 – 3 of 6')).toBeVisible();
     });
-
-    //TODO - Check if possible to click on "next" within mat-paginator
   });
 
   describe('Testing filtering fields', () => {
