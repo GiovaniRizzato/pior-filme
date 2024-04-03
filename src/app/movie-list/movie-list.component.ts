@@ -2,19 +2,19 @@ import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { Movie, MoviesPageable } from '../movie-service/movie-models';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovieService } from '../movie-service/movie.service';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { Observable, map, pipe, startWith, switchMap } from 'rxjs';
 
 @Component({
-  selector: 'movie-list-component',
+  selector: 'app-movie-list-component',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit, AfterViewInit{
-  displayedColumns = ['id', 'title', 'year', 'producers', 'winner'];
+  displayedColumns = ['id', 'year', 'title','winner'];
   movieTable: MoviesPageable = {} as MoviesPageable;
   dataSource = new MatTableDataSource<Movie>();
-  totalData: number = 0;
+  totalData = 0;
 
   isLoading = true;
 
@@ -27,7 +27,7 @@ export class MovieListComponent implements OnInit, AfterViewInit{
 
   @ViewChild('paginator') paginator!: MatPaginator;
 
-  private resetTable$(pageIndex: number = this.paginator.pageIndex + 1, pageSize: number = this.paginator.pageSize) {
+  private resetTable$(pageIndex: number = this.paginator.pageIndex, pageSize: number = this.paginator.pageSize) {
     return pipe(
       startWith({}),
       switchMap(() => {

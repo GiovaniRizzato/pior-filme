@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -29,6 +30,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatProgressBarModule,
     FormsModule,
     MatInputModule,
+    MatSelectModule,
     MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule

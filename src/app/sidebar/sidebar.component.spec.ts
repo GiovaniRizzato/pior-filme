@@ -1,6 +1,5 @@
 import { render, RenderResult } from '@testing-library/angular'
 import { AppModule } from '../app.module';
-import userEvent from '@testing-library/user-event'
 import { SidebarComponent } from './sidebar.component';
 
 

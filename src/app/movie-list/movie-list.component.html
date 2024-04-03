@@ -6,11 +6,6 @@
             <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
             <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
         </ng-container>
-        <!-- Title -->
-        <ng-container matColumnDef="title">
-            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
-        </ng-container>
         <!-- Year -->
         <ng-container matColumnDef="year">
             <mat-header-cell *matHeaderCellDef>
@@ -24,27 +19,21 @@
             </mat-header-cell>
             <mat-cell *matCellDef="let movie"> {{movie.year}} </mat-cell>
         </ng-container>
-        <!-- Studio -->
-        <ng-container matColumnDef="studios">
-            <mat-header-cell *matHeaderCellDef> Studios </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{ movie.studios.join(', ') }} </mat-cell>
-        </ng-container>
-        <!-- Producer -->
-        <ng-container matColumnDef="producers">
-            <mat-header-cell *matHeaderCellDef> Producers </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{ movie.producers.join(', ') }} </mat-cell>
+        <!-- Title -->
+        <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+            <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
         </ng-container>
         <!-- Winner -->
         <ng-container matColumnDef="winner">
             <mat-header-cell *matHeaderCellDef>
                 <div class="header-with-inpupt">
-                    <span id="winner-column-label">Did it win?</span>
+                    <span id="winner-column-label">Winner?</span>
                     <span class="input-header">
-                        <select aria-labelledby="winner-column-label" class="form-field" [(ngModel)]="filters.isWinner" (change)="applyFilter()">
-                            <option value=undefined>Yes/No</option>
-                            <option value=true>Yes</option>
-                            <option value=false>No</option>
-                        </select>
+                        <mat-select aria-labelledby="winner-column-label" placeholder="Yes/No" [(value)]="filters.isWinner" (valueChange)="applyFilter()">
+                            <mat-option [value]="true">Yes</mat-option>
+                            <mat-option [value]="false">No</mat-option>
+                        </mat-select>
                     </span>
                 </div>
             </mat-header-cell>

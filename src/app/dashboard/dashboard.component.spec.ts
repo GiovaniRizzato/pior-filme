@@ -1,4 +1,4 @@
-import { getAllByRole, getByLabelText, getByPlaceholderText, render, RenderResult } from '@testing-library/angular'
+import { getAllByRole, render, RenderResult } from '@testing-library/angular'
 import { DashboardComponent } from './dashboard.component';
 import { Mock } from 'ts-mockery'
 import { MovieService } from '../movie-service/movie.service';
@@ -23,17 +23,17 @@ describe('MovieListComponent', () => {
     } as YearWinningCountList),
     getStudiosWithWinCount: () => of({
       studios: [{
-          name: "Studio One",
-          winCount: 5
-        },
-        {
-          name: "Studio Two",
-          winCount: 4
-        },
-        {
-          name: "Studio Three",
-          winCount: 7
-        }]
+        name: "Studio One",
+        winCount: 5
+      },
+      {
+        name: "Studio Two",
+        winCount: 4
+      },
+      {
+        name: "Studio Three",
+        winCount: 7
+      }]
     } as StudioWinningCountList),
     getWinIntervalForProducers: () => of({
       min: [{
@@ -69,7 +69,7 @@ describe('MovieListComponent', () => {
     })
   })
 
-  
+
   it('should be created', () => { 
     expect(component).toBeTruthy();
   });
