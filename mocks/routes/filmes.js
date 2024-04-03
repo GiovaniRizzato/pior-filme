@@ -31,7 +31,11 @@ module.exports = [
                             }
                         } else {
                             if(req.query.page) {
-                                res.send(DATA.filmList);
+                                const filmListCopy = JSON.parse(JSON.stringify(DATA.filmList));
+                                const pageNumber = req.query.page;
+                                const pageSize = req.query.size;
+                                filmListCopy.content = filmListCopy.content.splice(pageNumber * pageSize, pageSize);
+                                res.send(filmListCopy);
                             } else {
                                 res.send(DATA.movieOfTheYear);
                             }

@@ -2,7 +2,7 @@
     "filmList": {
         "content":[
             {
-                "id":999,
+                "id":991,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name"],
@@ -10,7 +10,7 @@
                 "winner":true
             },
             {
-                "id":999,
+                "id":992,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -18,7 +18,7 @@
                 "winner":false
             },
             {
-                "id":999,
+                "id":993,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -26,7 +26,7 @@
                 "winner":false
             },
             {
-                "id":999,
+                "id":994,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -34,7 +34,7 @@
                 "winner":false
             },
             {
-                "id":999,
+                "id":995,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -42,7 +42,7 @@
                 "winner":false
             },
             {
-                "id":999,
+                "id":996,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -50,7 +50,15 @@
                 "winner":false
             },
             {
-                "id":999,
+                "id":997,
+                "year":1900,
+                "title":"Movie Title",
+                "studios":["Studio Name","Studio Name"],
+                "producers":["Producer Name"],
+                "winner":false
+            },
+            {
+                "id":998,
                 "year":1900,
                 "title":"Movie Title",
                 "studios":["Studio Name","Studio Name"],
@@ -79,9 +87,9 @@
             "paged":true,
             "unpaged":false
         },
-        "totalElements":999,
+        "totalElements":9,
         "last":false,
-        "totalPages":99,
+        "totalPages":3,
         "first":true,
         "sort":
         {
