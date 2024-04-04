@@ -28,11 +28,15 @@ export class MovieListComponent implements OnInit, AfterViewInit{
   @ViewChild('paginator') paginator!: MatPaginator;
 
   private resetTable$(pageIndex: number = this.paginator.pageIndex, pageSize: number = this.paginator.pageSize) {
+    //Checks if this is the last page
+    const isTheLastPage = (this.totalData - (pageIndex * pageSize) <= pageSize) && this.totalData !== 0
+    //Checks how many movies are left after all the pages had been full
+    const remeningPageSize = this.totalData % pageSize
     return pipe(
       startWith({}),
       switchMap(() => {
         this.isLoading = true;
-        return this.movieService.getAllMovies(pageIndex, pageSize, this.filters.isWinner, this.filters.year)
+        return this.movieService.getAllMovies(pageIndex, isTheLastPage && remeningPageSize !== 0 ? remeningPageSize : pageSize , this.filters.isWinner, this.filters.year)
       }),
       map(movieData => {
         if (movieData == null) return [];
