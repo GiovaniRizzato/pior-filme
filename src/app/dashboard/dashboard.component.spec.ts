@@ -24,15 +24,19 @@ describe('MovieListComponent', () => {
     getStudiosWithWinCount: () => of({
       studios: [{
         name: "Studio One",
-        winCount: 5
+        winCount: 8
       },
       {
         name: "Studio Two",
-        winCount: 4
+        winCount: 6
       },
       {
         name: "Studio Three",
-        winCount: 7
+        winCount: 5
+      },
+      {
+        name: "Studio Four",
+        winCount: 3
       }]
     } as StudioWinningCountList),
     getWinIntervalForProducers: () => of({
@@ -74,17 +78,17 @@ describe('MovieListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('"List of years with multiple winners" table', () => {
+  describe('"List years with multiple winners" table', () => {
     let table: HTMLElement;
     let rows: HTMLElement[];
 
     beforeEach(() => {
-      table = component.getByRole('table', {name: 'List of years with multiple winners'});
+      table = component.getByRole('table', {name: 'List years with multiple winners'});
       rows = getAllByRole(table, 'row');
     });
 
     it('should have the title', () => {
-      component.getByRole('heading', {name: 'List of years with multiple winners'});
+      component.getByRole('heading', {name: 'List years with multiple winners'});
     });
 
     it('should have the proper column headers', () => {
@@ -95,7 +99,7 @@ describe('MovieListComponent', () => {
     });
 
     it('should have all the correct data in the table', () => { 
-      const firstDataRow = getAllByRole(rows[1], 'cell')
+      const firstDataRow = getAllByRole(rows[1], 'cell');
       expect(firstDataRow[0]).toHaveTextContent('1990');
       expect(firstDataRow[1]).toHaveTextContent('3');
 
@@ -105,7 +109,7 @@ describe('MovieListComponent', () => {
     });
   });
 
-  describe('"Top X studios with winners" table', () => {
+  describe('"Top 3 studios with winners" table', () => {
     let table: HTMLElement;
     let rows: HTMLElement[];
 
@@ -118,6 +122,10 @@ describe('MovieListComponent', () => {
       component.getByRole('heading', {name: 'Top 3 studios with winners'});
     });
 
+    it('should have no more than 4 rows (header + 3 data rows)', () => {
+      expect(rows.length).toBe(4);
+    });
+
     it('should have the proper column headers', () => {
       const headerRow = getAllByRole(rows[0], 'columnheader');
       expect(headerRow.length).toEqual(2);
@@ -128,21 +136,21 @@ describe('MovieListComponent', () => {
     it('should have all the correct data in the table', () => { 
       const firstDataRow = getAllByRole(rows[1], 'cell')
       expect(firstDataRow[0]).toHaveTextContent('Studio One');
-      expect(firstDataRow[1]).toHaveTextContent('5');
+      expect(firstDataRow[1]).toHaveTextContent('8');
 
       const secoundDataRow = getAllByRole(rows[2], 'cell')
       expect(secoundDataRow[0]).toHaveTextContent('Studio Two');
-      expect(secoundDataRow[1]).toHaveTextContent('4');
+      expect(secoundDataRow[1]).toHaveTextContent('6');
 
       const ThirdDataRow = getAllByRole(rows[3], 'cell')
       expect(ThirdDataRow[0]).toHaveTextContent('Studio Three');
-      expect(ThirdDataRow[1]).toHaveTextContent('7');
+      expect(ThirdDataRow[1]).toHaveTextContent('5');
     });
   });
 
-  describe('"Producers with longest and shortest intervals between wins" tables', () => {
+  describe('"Producers with longest and shortest interval between wins" tables', () => {
     it('should have the title', () => {
-      component.getByRole('heading', {name: 'Producers with longest and shortest intervals between wins'});
+      component.getByRole('heading', {name: 'Producers with longest and shortest interval between wins'});
     });
 
     describe('"Maximun" table', () => {
@@ -163,8 +171,8 @@ describe('MovieListComponent', () => {
         expect(headerRow.length).toEqual(4);
         expect(headerRow[0]).toHaveTextContent('Producer');
         expect(headerRow[1]).toHaveTextContent('Interval');
-        expect(headerRow[2]).toHaveTextContent('Previous Win');
-        expect(headerRow[3]).toHaveTextContent('Following Win');
+        expect(headerRow[2]).toHaveTextContent('Previous Year');
+        expect(headerRow[3]).toHaveTextContent('Following Year');
       });
 
       it('should have all the correct data in the table', () => { 
@@ -194,8 +202,8 @@ describe('MovieListComponent', () => {
         expect(headerRow.length).toEqual(4);
         expect(headerRow[0]).toHaveTextContent('Producer');
         expect(headerRow[1]).toHaveTextContent('Interval');
-        expect(headerRow[2]).toHaveTextContent('Previous Win');
-        expect(headerRow[3]).toHaveTextContent('Following Win');
+        expect(headerRow[2]).toHaveTextContent('Previous Year');
+        expect(headerRow[3]).toHaveTextContent('Following Year');
       });
 
       it('should have all the correct data in the table', () => { 
@@ -208,19 +216,19 @@ describe('MovieListComponent', () => {
     });
   });
 
-  describe('"List movie winner by year" block', () => {
+  describe('"List movie winners by year" block', () => {
     let table: HTMLElement;
     let input: HTMLElement;
     let rows: HTMLElement[];
 
     beforeEach(() => {
-      table = component.getByRole('table', {name: 'List movie winner by year'});
+      table = component.getByRole('table', {name: 'List movie winners by year'});
       rows = getAllByRole(table, 'row');
       input = component.getByRole('spinbutton', {name: 'Search by year'});
     });
 
     it('should have the title', () => {
-      component.getByRole('heading', {name: 'List movie winner by year'});
+      component.getByRole('heading', {name: 'List movie winners by year'});
     });
 
     it('should have the proper column headers', () => {
