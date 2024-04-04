@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit{
 
   resetTopStudiosTable() {
     this.movieService.getStudiosWithWinCount().subscribe(data => {
-      this.topStudiosTableDataSource.data = data.studios;
+      this.topStudiosTableDataSource.data = data.studios.slice(0, 3);
     });
   }
 

@@ -1,6 +1,6 @@
 <div class="table-row">
     <div class="multiple-winner-table-block table-block">
-        <h2 id="multiple-winner-table-label">List of years with multiple winners</h2>
+        <h2 id="multiple-winner-table-label">List years with multiple winners</h2>
         <mat-table [dataSource]="multipleWinnerTableDataSource" [attr.aria-labelledby]="'multiple-winner-table-label'">
             <ng-container matColumnDef="year">
                 <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
@@ -36,7 +36,7 @@
 
 <div class="table-row">
     <div class="producer-interval-table-block table-block">
-        <h2 id="producer-interval-table-label">Producers with longest and shortest intervals between wins</h2>
+        <h2 id="producer-interval-table-label">Producers with longest and shortest interval between wins</h2>
         <div>
             <h3 id="maximum-label">Maximun</h3>
             <mat-table [dataSource]="maxProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label maximum-label'">
@@ -49,11 +49,11 @@
                     <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="previousWin">
-                    <mat-header-cell *matHeaderCellDef> Previous Win </mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="followingWin">
-                    <mat-header-cell *matHeaderCellDef> Following Win </mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
                 </ng-container>
 
@@ -72,11 +72,11 @@
                     <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="previousWin">
-                    <mat-header-cell *matHeaderCellDef> Previous Win </mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="followingWin">
-                    <mat-header-cell *matHeaderCellDef> Following Win </mat-header-cell>
+                    <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
                     <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
                 </ng-container>
 
@@ -87,7 +87,7 @@
     </div>
 
     <div class="winner-by-year-table-block table-block">
-        <h2 id="winner-by-year-table-label">List movie winner by year</h2>
+        <h2 id="winner-by-year-table-label">List movie winners by year</h2>
         <mat-form-field class="example-form-field">
             <mat-label id="winner-by-year-input">Search by year</mat-label>
             <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear">
