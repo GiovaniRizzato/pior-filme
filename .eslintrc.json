@@ -15,10 +15,9 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "indent": [
-            "error",
-            2
-        ],
+        "semi": ["error"],
+        "no-extra-semi": ["error"],
+        "indent": ["error", 2],
         "@angular-eslint/directive-selector": [
           "error",
           {

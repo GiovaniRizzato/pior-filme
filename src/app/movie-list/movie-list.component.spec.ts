@@ -1,10 +1,10 @@
-import { getAllByRole, getByLabelText, render, RenderResult } from '@testing-library/angular'
-import { MovieListComponent } from './movie-list.component'
-import { Mock } from 'ts-mockery'
+import { getAllByRole, getByLabelText, render, RenderResult } from '@testing-library/angular';
+import { MovieListComponent } from './movie-list.component';
+import { Mock } from 'ts-mockery';
 import { MovieService } from '../movie-service/movie.service';
 import { AppModule } from '../app.module';
 import { Movie, MoviesPageable } from '../movie-service/movie-models';
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
 import { of } from 'rxjs';
 import { MatSelect } from '@angular/material/select';
 import { By } from '@angular/platform-browser';
@@ -49,8 +49,8 @@ describe('MovieListComponent', () => {
       componentProviders: [
         { provide: MovieService, useFactory: () => mockMovierService }
       ]
-    })
-  })
+    });
+  });
 
   
   it('should be created', () => { 
@@ -60,7 +60,7 @@ describe('MovieListComponent', () => {
   it('should have page title', () => {
     component.getByRole('heading', {
       name: 'List movies'
-    })
+    });
   });
   
   describe('Testing table heading and data', () => {
@@ -70,32 +70,32 @@ describe('MovieListComponent', () => {
     });
 
     it('should have all the headers in the table', () => { 
-      const headerCells = getAllByRole(rows[0], 'columnheader')
+      const headerCells = getAllByRole(rows[0], 'columnheader');
       expect(headerCells.length).toEqual(4);
       expect(headerCells[0]).toHaveTextContent('ID');
       expect(headerCells[1]).toHaveTextContent('Year');
-      const yearFilterInput = getByLabelText(headerCells[1], 'Year')
+      const yearFilterInput = getByLabelText(headerCells[1], 'Year');
       expect(yearFilterInput).toBeVisible();
       expect(headerCells[2]).toHaveTextContent('Title');
       expect(headerCells[3]).toHaveTextContent('Winner?');
-      const winnerFilterInput = getByLabelText(headerCells[3], 'Winner?')
+      const winnerFilterInput = getByLabelText(headerCells[3], 'Winner?');
       expect(winnerFilterInput).toBeVisible();
     });
 
     it('should have all the correct data in the table', () => { 
-      const firstDataRow = getAllByRole(rows[1], 'cell')
+      const firstDataRow = getAllByRole(rows[1], 'cell');
       expect(firstDataRow[0]).toHaveTextContent('1');
       expect(firstDataRow[1]).toHaveTextContent('1900');
       expect(firstDataRow[2]).toHaveTextContent('Movie');
       expect(firstDataRow[3]).toHaveTextContent('Yes');
 
-      const secoundDataRow = getAllByRole(rows[2], 'cell')
+      const secoundDataRow = getAllByRole(rows[2], 'cell');
       expect(secoundDataRow[0]).toHaveTextContent('2');
       expect(secoundDataRow[1]).toHaveTextContent('1901');
       expect(secoundDataRow[2]).toHaveTextContent('Movie Returns');
       expect(secoundDataRow[3]).toHaveTextContent('No');
 
-      const thirdDataRow = getAllByRole(rows[3], 'cell')
+      const thirdDataRow = getAllByRole(rows[3], 'cell');
       expect(thirdDataRow[0]).toHaveTextContent('3');
       expect(thirdDataRow[1]).toHaveTextContent('1910');
       expect(thirdDataRow[2]).toHaveTextContent('Another Movie?');
@@ -130,9 +130,9 @@ describe('MovieListComponent', () => {
         //Check if the data shown has changed by checking the "ID" column
         const rows = component.getAllByRole('row');
         expect(rows.length).toBe(3);//header + 2 data rows
-        const firstDataRow = getAllByRole(rows[1], 'cell')
+        const firstDataRow = getAllByRole(rows[1], 'cell');
         expect(firstDataRow[0]).toHaveTextContent('4');
-        const secoundDataRow = getAllByRole(rows[2], 'cell')
+        const secoundDataRow = getAllByRole(rows[2], 'cell');
         expect(secoundDataRow[0]).toHaveTextContent('5');
       });
     });    
@@ -187,11 +187,11 @@ describe('MovieListComponent', () => {
 
       //Check if the data shown has changed by checking the "ID" column
       const rows = component.getAllByRole('row');
-      const firstDataRow = getAllByRole(rows[1], 'cell')
+      const firstDataRow = getAllByRole(rows[1], 'cell');
       expect(firstDataRow[0]).toHaveTextContent('4');
-      const secoundDataRow = getAllByRole(rows[2], 'cell')
+      const secoundDataRow = getAllByRole(rows[2], 'cell');
       expect(secoundDataRow[0]).toHaveTextContent('5');
-      const thirdDataRow = getAllByRole(rows[3], 'cell')
+      const thirdDataRow = getAllByRole(rows[3], 'cell');
       expect(thirdDataRow[0]).toHaveTextContent('6');
     });
   });

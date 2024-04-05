@@ -21,7 +21,7 @@ export class MovieListComponent implements OnInit, AfterViewInit{
   filters: {
     year?: number,
     isWinner?: boolean
-  } = {}
+  } = {};
 
   constructor(public movieService: MovieService) {}
 
@@ -32,7 +32,7 @@ export class MovieListComponent implements OnInit, AfterViewInit{
       startWith({}),
       switchMap(() => {
         this.isLoading = true;
-        return this.movieService.getAllMovies(pageIndex, pageSize, this.filters.isWinner, this.filters.year)
+        return this.movieService.getAllMovies(pageIndex, pageSize, this.filters.isWinner, this.filters.year);
       }),
       map(movieData => {
         if (movieData == null) return [];
@@ -40,7 +40,7 @@ export class MovieListComponent implements OnInit, AfterViewInit{
         this.isLoading = false;
         return movieData.content;
       })
-    )
+    );
   }
 
   ngOnInit() {

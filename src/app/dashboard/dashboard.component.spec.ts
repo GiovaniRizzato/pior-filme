@@ -1,10 +1,10 @@
-import { getAllByRole, render, RenderResult } from '@testing-library/angular'
+import { getAllByRole, render, RenderResult } from '@testing-library/angular';
 import { DashboardComponent } from './dashboard.component';
-import { Mock } from 'ts-mockery'
+import { Mock } from 'ts-mockery';
 import { MovieService } from '../movie-service/movie.service';
 import { AppModule } from '../app.module';
 import { MinAndMaxWinIntervalForProducers, Movie, StudioWinningCountList, YearWinningCountList } from '../movie-service/movie-models';
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
 import { of } from 'rxjs';
 
 
@@ -70,8 +70,8 @@ describe('MovieListComponent', () => {
       componentProviders: [
         { provide: MovieService, useFactory: () => mockMovierService }
       ]
-    })
-  })
+    });
+  });
 
 
   it('should be created', () => { 
@@ -103,7 +103,7 @@ describe('MovieListComponent', () => {
       expect(firstDataRow[0]).toHaveTextContent('1990');
       expect(firstDataRow[1]).toHaveTextContent('3');
 
-      const secoundDataRow = getAllByRole(rows[2], 'cell')
+      const secoundDataRow = getAllByRole(rows[2], 'cell');
       expect(secoundDataRow[0]).toHaveTextContent('1993');
       expect(secoundDataRow[1]).toHaveTextContent('5');
     });
@@ -134,15 +134,15 @@ describe('MovieListComponent', () => {
     });
 
     it('should have all the correct data in the table', () => { 
-      const firstDataRow = getAllByRole(rows[1], 'cell')
+      const firstDataRow = getAllByRole(rows[1], 'cell');
       expect(firstDataRow[0]).toHaveTextContent('Studio One');
       expect(firstDataRow[1]).toHaveTextContent('8');
 
-      const secoundDataRow = getAllByRole(rows[2], 'cell')
+      const secoundDataRow = getAllByRole(rows[2], 'cell');
       expect(secoundDataRow[0]).toHaveTextContent('Studio Two');
       expect(secoundDataRow[1]).toHaveTextContent('6');
 
-      const ThirdDataRow = getAllByRole(rows[3], 'cell')
+      const ThirdDataRow = getAllByRole(rows[3], 'cell');
       expect(ThirdDataRow[0]).toHaveTextContent('Studio Three');
       expect(ThirdDataRow[1]).toHaveTextContent('5');
     });
@@ -176,7 +176,7 @@ describe('MovieListComponent', () => {
       });
 
       it('should have all the correct data in the table', () => { 
-        const dataRow = getAllByRole(rows[1], 'cell')
+        const dataRow = getAllByRole(rows[1], 'cell');
         expect(dataRow[0]).toHaveTextContent('Another Producer');
         expect(dataRow[1]).toHaveTextContent('9');
         expect(dataRow[2]).toHaveTextContent('1990');
@@ -207,7 +207,7 @@ describe('MovieListComponent', () => {
       });
 
       it('should have all the correct data in the table', () => { 
-        const dataRow = getAllByRole(rows[1], 'cell')
+        const dataRow = getAllByRole(rows[1], 'cell');
         expect(dataRow[0]).toHaveTextContent('Producer');
         expect(dataRow[1]).toHaveTextContent('4');
         expect(dataRow[2]).toHaveTextContent('1989');
@@ -251,7 +251,7 @@ describe('MovieListComponent', () => {
       });
 
       it('should have all the correct data in the table', () => { 
-        const dataRow = getAllByRole(rows[1], 'cell')
+        const dataRow = getAllByRole(rows[1], 'cell');
         expect(dataRow[0]).toHaveTextContent('2');
         expect(dataRow[1]).toHaveTextContent('1901');
         expect(dataRow[2]).toHaveTextContent('Movie Returns');

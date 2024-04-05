@@ -1,4 +1,4 @@
-import { render, RenderResult } from '@testing-library/angular'
+import { render, RenderResult } from '@testing-library/angular';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
@@ -11,8 +11,8 @@ describe('MovieListComponent', () => {
       imports: [
         AppModule
       ],
-    })
-  })
+    });
+  });
 
   
   it('should be created', () => { 

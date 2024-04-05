@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest --no-cache",
     "mocks": "mocks-server",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix"
   },
   "private": true,
   "dependencies": {
