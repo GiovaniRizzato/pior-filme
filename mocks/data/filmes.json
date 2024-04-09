@@ -11,7 +11,7 @@
             },
             {
                 "id":992,
-                "year":1902,
+                "year":1901,
                 "title":"More Movie & More Title",
                 "studios":["Studio 1", "Studio Name"],
                 "producers":["Producer", "Other Producer"],
@@ -19,7 +19,7 @@
             },
             {
                 "id":993,
-                "year":1903,
+                "year":1901,
                 "title":"Tokyo's Movie Title",
                 "studios":["Studio 1","Studio Name"],
                 "producers":["Producer", "Other Producer"],
@@ -27,7 +27,7 @@
             },
             {
                 "id":994,
-                "year":1904,
+                "year":1902,
                 "title":"Movie Title 5: Rio",
                 "studios":["Studio 1"],
                 "producers":["Producer", "Other Producer"],
@@ -35,7 +35,7 @@
             },
             {
                 "id":995,
-                "year":1905,
+                "year":1902,
                 "title":"Movie Title 6",
                 "studios":["Studio 1"],
                 "producers":["Producer", "Other Producer", "Yet Another"],
@@ -43,11 +43,11 @@
             },
             {
                 "id":996,
-                "year":1906,
+                "year":1902,
                 "title":"Movie Title 7",
                 "studios":["Studio Name"],
                 "producers":["Other Producer", "Yet Another"],
-                "winner":false
+                "winner":true
             },
             {
                 "id":997,
