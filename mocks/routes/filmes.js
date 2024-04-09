@@ -31,9 +31,16 @@ module.exports = [
                             }
                         } else {
                             if(req.query.page) {
-                                const filmListCopy = JSON.parse(JSON.stringify(DATA.filmList));
+                                let filmListCopy = JSON.parse(JSON.stringify(DATA.filmList));
+                                if(req.query.year) {
+                                    filmListCopy.content = filmListCopy.content.filter(movie => movie.year == req.query.year);
+                                }
+                                if(typeof req.query.winner !== "undefined") {
+                                    filmListCopy.content = filmListCopy.content.filter(movie => movie.winner === (req.query.winner === "true"));
+                                }
                                 const pageNumber = req.query.page;
                                 const pageSize = req.query.size;
+                                filmListCopy.totalElements = filmListCopy.content.length;
                                 filmListCopy.content = filmListCopy.content.splice(pageNumber * pageSize, pageSize);
                                 res.send(filmListCopy);
                             } else {
@@ -43,6 +50,13 @@ module.exports = [
                     },
                   },
             },
+            {
+                id: "error",
+                type: "status", 
+                options: {
+                    status: 500,
+                },
+            }
         ]
     }
 ];

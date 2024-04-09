@@ -56,6 +56,16 @@ export class MovieListComponent implements OnInit, AfterViewInit{
   }
 
   applyFilter() {
+    //Change back to first page due to the fact that filtering changed
+    this.paginator.firstPage();
+    new Observable()
+      .pipe(this.resetTable$())
+      .subscribe(movieData => {
+        this.dataSource = new MatTableDataSource(movieData);
+      });
+  }
+
+  changePage() {
     new Observable()
       .pipe(this.resetTable$())
       .subscribe(movieData => {

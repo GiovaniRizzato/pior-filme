@@ -15,7 +15,7 @@ export class MovieService {
     let params = new HttpParams()
       .set('page', pageIndex)
       .set('size', pageSize);
-    if(isWinner) params = params.set('winner', isWinner);
+    if(typeof isWinner !== "undefined") params = params.set('winner', isWinner);
     if(year) params = params.set('year', year);
 
     return this.http.get<MoviesPageable>(environment.apiUrl, {params});

@@ -31,6 +31,7 @@
                     <span id="winner-column-label">Winner?</span>
                     <span class="input-header">
                         <mat-select aria-labelledby="winner-column-label" placeholder="Yes/No" [(value)]="filters.isWinner" (valueChange)="applyFilter()">
+                            <mat-option [value]="undefined">Yes/No</mat-option>
                             <mat-option [value]="true">Yes</mat-option>
                             <mat-option [value]="false">No</mat-option>
                         </mat-select>
@@ -50,7 +51,7 @@
         #paginator
         [length]="totalData"
         [pageSizeOptions]="[3, 5, 7]"
-        (page)="applyFilter()"
+        (page)="changePage()"
         showFirstLastButtons
     ></mat-paginator>
 </div>
