@@ -88,9 +88,9 @@
 
     <div class="winner-by-year-table-block table-block">
         <h2 id="winner-by-year-table-label">List movie winners by year</h2>
-        <mat-form-field class="example-form-field">
+        <mat-form-field class="find-by-year-form-field">
             <mat-label id="winner-by-year-input">Search by year</mat-label>
-            <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear">
+            <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear" (keyup.Enter)="searchMovieByYear(searchedYear)">
             <button matSuffix mat-icon-button aria-label="Make the search" (click)="searchMovieByYear(searchedYear)">
                 <mat-icon>find_in_page</mat-icon>
             </button>

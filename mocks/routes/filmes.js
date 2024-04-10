@@ -44,7 +44,10 @@ module.exports = [
                                 filmListCopy.content = filmListCopy.content.splice(pageNumber * pageSize, pageSize);
                                 res.send(filmListCopy);
                             } else {
-                                res.send(DATA.movieOfTheYear);
+                                let filmCopy = JSON.parse(JSON.stringify(DATA.movieOfTheYear));
+                                filmCopy.id = parseInt(Math.random() * 99);
+                                filmCopy.year = req.query.year;
+                                res.send(filmCopy);
                             }
                         }
                     },
