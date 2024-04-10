@@ -55,8 +55,8 @@ describe('MovieService', () => {
   });
 
   it('should getWinnersByYear', () => {
-    service.getWinnersByYear(true, 1993).subscribe(() => undefined);
-    const req = httpMock.expectOne(`${environment.apiUrl}?winner=true&year=1993`);
+    service.getWinnersByYear(false, 1993).subscribe(() => undefined);
+    const req = httpMock.expectOne(`${environment.apiUrl}?winner=false&year=1993`);
     expect(req.request.method).toBe('GET');
   });
 });
