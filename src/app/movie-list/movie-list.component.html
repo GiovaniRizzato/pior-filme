@@ -1,57 +1,57 @@
 <div>
-    <h2>List movies</h2>
-    <mat-table [dataSource]="dataSource">
-        <!-- ID -->
-        <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
-        </ng-container>
-        <!-- Year -->
-        <ng-container matColumnDef="year">
-            <mat-header-cell *matHeaderCellDef>
-                <div class="header-with-inpupt">
-                    <span id="year-column-label">Year</span>
-                    <span class="input-header">
-                        <input matInput aria-labelledby="year-column-label" [(ngModel)]="filters.year" class="form-field" type="number" placeholder="Filter by year">
-                        <mat-icon role="button" (click)="applyFilter()" class="icon-button" aria-label="Search by year">find_in_page</mat-icon>
-                    </span>
-                </div>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{movie.year}} </mat-cell>
-        </ng-container>
-        <!-- Title -->
-        <ng-container matColumnDef="title">
-            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
-        </ng-container>
-        <!-- Winner -->
-        <ng-container matColumnDef="winner">
-            <mat-header-cell *matHeaderCellDef>
-                <div class="header-with-inpupt">
-                    <span id="winner-column-label">Winner?</span>
-                    <span class="input-header">
-                        <mat-select aria-labelledby="winner-column-label" placeholder="Yes/No" [(value)]="filters.isWinner" (valueChange)="applyFilter()">
-                            <mat-option [value]="undefined">Yes/No</mat-option>
-                            <mat-option [value]="true">Yes</mat-option>
-                            <mat-option [value]="false">No</mat-option>
-                        </mat-select>
-                    </span>
-                </div>
-            </mat-header-cell>
-            <mat-cell *matCellDef="let movie"> {{movie.winner ? 'Yes' : 'No'}} </mat-cell>
-        </ng-container>
+  <h2>List movies</h2>
+  <mat-table [dataSource]="dataSource">
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
+    </ng-container>
+    <!-- Year -->
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef>
+        <div class="header-with-inpupt">
+          <span id="year-column-label">Year</span>
+          <span class="input-header">
+            <input matInput aria-labelledby="year-column-label" [(ngModel)]="filters.year" class="form-field" type="number" placeholder="Filter by year">
+            <mat-icon role="button" (click)="applyFilter()" class="icon-button" aria-label="Search by year">find_in_page</mat-icon>
+          </span>
+        </div>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let movie"> {{movie.year}} </mat-cell>
+    </ng-container>
+    <!-- Title -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
+    </ng-container>
+    <!-- Winner -->
+    <ng-container matColumnDef="winner">
+      <mat-header-cell *matHeaderCellDef>
+        <div class="header-with-inpupt">
+          <span id="winner-column-label">Winner?</span>
+          <span class="input-header">
+            <mat-select aria-labelledby="winner-column-label" placeholder="Yes/No" [(value)]="filters.isWinner" (valueChange)="applyFilter()">
+              <mat-option [value]="undefined">Yes/No</mat-option>
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
+          </span>
+        </div>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let movie"> {{movie.winner ? 'Yes' : 'No'}} </mat-cell>
+    </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
     
-    <!-- Paginator -->
-    <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
-    <mat-paginator
-        #paginator
-        [length]="totalData"
-        [pageSizeOptions]="[3, 5, 7]"
-        (page)="changePage()"
-        showFirstLastButtons
-    ></mat-paginator>
+  <!-- Paginator -->
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <mat-paginator
+    #paginator
+    [length]="totalData"
+    [pageSizeOptions]="[3, 5, 7]"
+    (page)="changePage()"
+    showFirstLastButtons
+  ></mat-paginator>
 </div>

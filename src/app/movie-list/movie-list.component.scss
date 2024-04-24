@@ -1,25 +1,25 @@
 .header-with-inpupt {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .input-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .form-field {
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #424242;;
-    outline: none;
-    background: transparent;
-    width: calc(100% - 50px);
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #424242;;
+  outline: none;
+  background: transparent;
+  width: calc(100% - 50px);
 }
 
 .icon-button {
-    outline: none;
-    cursor: pointer;
+  outline: none;
+  cursor: pointer;
 }

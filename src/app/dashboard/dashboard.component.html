@@ -1,117 +1,117 @@
 <div class="table-row">
-    <div class="multiple-winner-table-block table-block">
-        <h2 id="multiple-winner-table-label">List years with multiple winners</h2>
-        <mat-table [dataSource]="multipleWinnerTableDataSource" [attr.aria-labelledby]="'multiple-winner-table-label'">
-            <ng-container matColumnDef="year">
-                <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="winnerCount">
-                <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
-            </ng-container>
+  <div class="multiple-winner-table-block table-block">
+    <h2 id="multiple-winner-table-label">List years with multiple winners</h2>
+    <mat-table [dataSource]="multipleWinnerTableDataSource" [attr.aria-labelledby]="'multiple-winner-table-label'">
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="winnerCount">
+        <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.winnerCount }} </mat-cell>
+      </ng-container>
 
-            <mat-header-row *matHeaderRowDef="multipleWinnerTableColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: multipleWinnerTableColumns;"></mat-row>
-        </mat-table>
-    </div>
+      <mat-header-row *matHeaderRowDef="multipleWinnerTableColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: multipleWinnerTableColumns;"></mat-row>
+    </mat-table>
+  </div>
 
-    <div class="studios-table-block table-block">
-        <h2 id="studios-table-label">Top {{topStudiosTableDataSource.data.length}} studios with winners</h2>
-        <mat-table [dataSource]="topStudiosTableDataSource" [attr.aria-labelledby]="'studios-table-label'">
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="winCount">
-                <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.winCount }} </mat-cell>
-            </ng-container>
+  <div class="studios-table-block table-block">
+    <h2 id="studios-table-label">Top {{topStudiosTableDataSource.data.length}} studios with winners</h2>
+    <mat-table [dataSource]="topStudiosTableDataSource" [attr.aria-labelledby]="'studios-table-label'">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.name }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="winCount">
+        <mat-header-cell *matHeaderCellDef> Win Count </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.winCount }} </mat-cell>
+      </ng-container>
 
-            <mat-header-row *matHeaderRowDef="topStudiosTableColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: topStudiosTableColumns;"></mat-row>
-        </mat-table>
-    </div>
+      <mat-header-row *matHeaderRowDef="topStudiosTableColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: topStudiosTableColumns;"></mat-row>
+    </mat-table>
+  </div>
 </div>
 
 <div class="table-row">
-    <div class="producer-interval-table-block table-block">
-        <h2 id="producer-interval-table-label">Producers with longest and shortest interval between wins</h2>
-        <div>
-            <h3 id="maximum-label">Maximum</h3>
-            <mat-table [dataSource]="maxProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label maximum-label'">
-                <ng-container matColumnDef="producer">
-                    <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="interval">
-                    <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="previousWin">
-                    <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="followingWin">
-                    <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
-                </ng-container>
+  <div class="producer-interval-table-block table-block">
+    <h2 id="producer-interval-table-label">Producers with longest and shortest interval between wins</h2>
+    <div>
+      <h3 id="maximum-label">Maximum</h3>
+      <mat-table [dataSource]="maxProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label maximum-label'">
+        <ng-container matColumnDef="producer">
+          <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="interval">
+          <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="previousWin">
+          <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="followingWin">
+          <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
+        </ng-container>
 
-                <mat-header-row *matHeaderRowDef="maxProducerIntervalTableColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: maxProducerIntervalTableColumns;"></mat-row>
-            </mat-table>
+        <mat-header-row *matHeaderRowDef="maxProducerIntervalTableColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: maxProducerIntervalTableColumns;"></mat-row>
+      </mat-table>
 
-            <h3 id="minimum-label">Minimum</h3>
-            <mat-table [dataSource]="minProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label minimum-label'">
-                <ng-container matColumnDef="producer">
-                    <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="interval">
-                    <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="previousWin">
-                    <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="followingWin">
-                    <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
-                    <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
-                </ng-container>
+      <h3 id="minimum-label">Minimum</h3>
+      <mat-table [dataSource]="minProducerIntervalTableDataSource" [attr.aria-labelledby]="'producer-interval-table-label minimum-label'">
+        <ng-container matColumnDef="producer">
+          <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.producer }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="interval">
+          <mat-header-cell *matHeaderCellDef> Interval </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.interval }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="previousWin">
+          <mat-header-cell *matHeaderCellDef> Previous Year </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.previousWin }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="followingWin">
+          <mat-header-cell *matHeaderCellDef> Following Year </mat-header-cell>
+          <mat-cell *matCellDef="let movie"> {{ movie.followingWin }} </mat-cell>
+        </ng-container>
 
-                <mat-header-row *matHeaderRowDef="minProducerIntervalTableColumns"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: minProducerIntervalTableColumns;"></mat-row>
-            </mat-table>
-        </div>
+        <mat-header-row *matHeaderRowDef="minProducerIntervalTableColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: minProducerIntervalTableColumns;"></mat-row>
+      </mat-table>
     </div>
+  </div>
 
-    <div class="winner-by-year-table-block table-block">
-        <h2 id="winner-by-year-table-label">List movie winners by year</h2>
-        <mat-form-field class="find-by-year-form-field">
-            <mat-label id="winner-by-year-input">Search by year</mat-label>
-            <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear" (keyup.Enter)="searchMovieByYear(searchedYear)">
-            <button matSuffix mat-icon-button aria-label="Make the search" (click)="searchMovieByYear(searchedYear)">
-                <mat-icon>find_in_page</mat-icon>
-            </button>
-        </mat-form-field>
+  <div class="winner-by-year-table-block table-block">
+    <h2 id="winner-by-year-table-label">List movie winners by year</h2>
+    <mat-form-field class="find-by-year-form-field">
+      <mat-label id="winner-by-year-input">Search by year</mat-label>
+      <input matInput type="number" aria-labelledby="winner-by-year-input" [(ngModel)]="searchedYear" (keyup.Enter)="searchMovieByYear(searchedYear)">
+      <button matSuffix mat-icon-button aria-label="Make the search" (click)="searchMovieByYear(searchedYear)">
+        <mat-icon>find_in_page</mat-icon>
+      </button>
+    </mat-form-field>
 
-        <mat-table [dataSource]="movieByYeayTableDataSource" [attr.aria-labelledby]="'winner-by-year-table-label'">
-            <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="year">
-                <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="title">
-                <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
-                <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
-            </ng-container>
+    <mat-table [dataSource]="movieByYeayTableDataSource" [attr.aria-labelledby]="'winner-by-year-table-label'">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.id }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.year }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let movie"> {{ movie.title }} </mat-cell>
+      </ng-container>
 
-            <mat-header-row *matHeaderRowDef="movieByYeayTableColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: movieByYeayTableColumns;"></mat-row>
-        </mat-table>
-    </div>
+      <mat-header-row *matHeaderRowDef="movieByYeayTableColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: movieByYeayTableColumns;"></mat-row>
+    </mat-table>
+  </div>
 </div>

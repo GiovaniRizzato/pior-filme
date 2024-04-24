@@ -3,6 +3,7 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
+  "plugins": ["@html-eslint"],
   "overrides": [
     {
       "files": [
@@ -40,10 +41,22 @@
       "files": [
         "*.html"
       ],
+      "parser": "@html-eslint/parser",
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@html-eslint/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "@html-eslint/indent": ["error", 2]
+      }
+    },
+    {
+      "files": [
+        "*.css",
+        "*.scss"
+      ],
+      "rules": {
+        "indent-legacy": ["error", 2]
+      }
     }
   ]
 }

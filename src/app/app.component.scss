@@ -1,19 +1,19 @@
 .title-banner {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 16px;
-    margin-bottom: 32px;
-    background-color: #555;
-    color: #fff;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 16px;
+  margin-bottom: 32px;
+  background-color: #555;
+  color: #fff;
 }
 
 .content {
-    margin-left: 11%;
+  margin-left: 11%;
 }
 
 @media screen and (max-width: 800px) {
-    .content {
-        margin-left: 0;
-    }
+  .content {
+    margin-left: 0;
+  }
 }
