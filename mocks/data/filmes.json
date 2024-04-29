@@ -1,161 +1,161 @@
 {
-    "filmList": {
-        "content":[
-            {
-                "id":991,
-                "year":1901,
-                "title":"Movie & Title",
-                "studios":["Studio 1"],
-                "producers":["Producer", "Other Producer", "Yet Another"],
-                "winner":true
-            },
-            {
-                "id":992,
-                "year":1901,
-                "title":"More Movie & More Title",
-                "studios":["Studio 1", "Studio Name"],
-                "producers":["Producer", "Other Producer"],
-                "winner":false
-            },
-            {
-                "id":993,
-                "year":1901,
-                "title":"Tokyo's Movie Title",
-                "studios":["Studio 1","Studio Name"],
-                "producers":["Producer", "Other Producer"],
-                "winner":false
-            },
-            {
-                "id":994,
-                "year":1902,
-                "title":"Movie Title 5: Rio",
-                "studios":["Studio 1"],
-                "producers":["Producer", "Other Producer"],
-                "winner":false
-            },
-            {
-                "id":995,
-                "year":1902,
-                "title":"Movie Title 6",
-                "studios":["Studio 1"],
-                "producers":["Producer", "Other Producer", "Yet Another"],
-                "winner":false
-            },
-            {
-                "id":996,
-                "year":1902,
-                "title":"Movie Title 7",
-                "studios":["Studio Name"],
-                "producers":["Other Producer", "Yet Another"],
-                "winner":true
-            },
-            {
-                "id":997,
-                "year":1907,
-                "title":"Movie Title 8",
-                "studios":["Studio Name"],
-                "producers":["Other Producer", "Yet Another"],
-                "winner":false
-            },
-            {
-                "id":998,
-                "year":1908,
-                "title":"Movie Title 9",
-                "studios":["Studio 1", "Studio Name"],
-                "producers":["Yet Another"],
-                "winner":false
-            },
-            {
-                "id":999,
-                "year":1909,
-                "title":"Movie Title X",
-                "studios":["Studio 1", "Studio Name"],
-                "producers":["Yet Another"],
-                "winner":false
-            }
-        ],
-        "pageable":
-        {
-            "sort":
-            {
-                "sorted":false,
-                "unsorted":true
-            },
-            "pageSize":0,
-            "pageNumber":0,
-            "offset":0,
-            "paged":true,
-            "unpaged":false
-        },
-        "totalElements":9,
-        "last":false,
-        "totalPages":3,
-        "first":true,
-        "sort":
-        {
-            "sorted":false,
-            "unsorted":true
-        },
-        "number":0,
-        "numberOfElements":99,
-        "size":99
-    },
-    "yearsWithMostWinners": {
-        "years": [
-            {
-                "year": 9999,
-                "winnerCount": 99
-            },
-            {
-                "year": 9999,
-                "winnerCount": 99
-            }
-        ]
-    },
-    "studios": {
-        "studios": [
-            {
-                "name": "Studio Name 1",
-                "winCount": 9
-            },
-            {
-                "name": "Studio Name 2",
-                "winCount": 8
-            },
-            {
-                "name": "Studio Name 3",
-                "winCount": 6
-            },
-            {
-                "name": "Studio Name 4",
-                "winCount": 3
-            }
-        ]
-    },
-    "winningInterval": {
-        "min": [
-            {
-                "producer": "Producer Name",
-                "interval": 9,
-                "previousWin": 2018,
-                "followingWin": 2019
-            }
-            ],
-        "max": [
-            {
-                "producer": "Producer Name",
-                "interval": 99,
-                "previousWin": 1900,
-                "followingWin": 1999
-            }
-        ]
-    },
-    "movieOfTheYear": {
-        "id":99,
-        "year":1990,
-        "title":"Movie Title",
-        "studios":["Studio Name"],
-        "producers":[" Producer Name "],
+  "filmList": {
+    "content":[
+      {
+        "id":991,
+        "year":1901,
+        "title":"Movie & Title",
+        "studios":["Studio 1"],
+        "producers":["Producer", "Other Producer", "Yet Another"],
         "winner":true
+      },
+      {
+        "id":992,
+        "year":1901,
+        "title":"More Movie & More Title",
+        "studios":["Studio 1", "Studio Name"],
+        "producers":["Producer", "Other Producer"],
+        "winner":false
+      },
+      {
+        "id":993,
+        "year":1901,
+        "title":"Tokyo's Movie Title",
+        "studios":["Studio 1","Studio Name"],
+        "producers":["Producer", "Other Producer"],
+        "winner":false
+      },
+      {
+        "id":994,
+        "year":1902,
+        "title":"Movie Title 5: Rio",
+        "studios":["Studio 1"],
+        "producers":["Producer", "Other Producer"],
+        "winner":false
+      },
+      {
+        "id":995,
+        "year":1902,
+        "title":"Movie Title 6",
+        "studios":["Studio 1"],
+        "producers":["Producer", "Other Producer", "Yet Another"],
+        "winner":false
+      },
+      {
+        "id":996,
+        "year":1902,
+        "title":"Movie Title 7",
+        "studios":["Studio Name"],
+        "producers":["Other Producer", "Yet Another"],
+        "winner":true
+      },
+      {
+        "id":997,
+        "year":1907,
+        "title":"Movie Title 8",
+        "studios":["Studio Name"],
+        "producers":["Other Producer", "Yet Another"],
+        "winner":false
+      },
+      {
+        "id":998,
+        "year":1908,
+        "title":"Movie Title 9",
+        "studios":["Studio 1", "Studio Name"],
+        "producers":["Yet Another"],
+        "winner":false
+      },
+      {
+        "id":999,
+        "year":1909,
+        "title":"Movie Title X",
+        "studios":["Studio 1", "Studio Name"],
+        "producers":["Yet Another"],
+        "winner":false
+      }
+    ],
+    "pageable":
+    {
+      "sort": {
+        "sorted":false,
+        "unsorted":true
+      },
+      "pageSize":0,
+      "pageNumber":0,
+      "offset":0,
+      "paged":true,
+      "unpaged":false
+    },
+    "totalElements":9,
+    "last":false,
+    "totalPages":3,
+    "first":true,
+    "sort": {
+      "sorted":false,
+      "unsorted":true
+    },
+    "number":0,
+    "numberOfElements":99,
+    "size":99
+  },
+  "yearsWithMostWinners": {
+    "years": [
+      {
+        "year": 9999,
+        "winnerCount": 99
+      },
+      {
+        "year": 9999,
+        "winnerCount": 99
+      }
+    ]
+  },
+  "studios": {
+    "studios": [
+      {
+        "name": "Studio Name 1",
+        "winCount": 9
+      },
+      {
+        "name": "Studio Name 2",
+        "winCount": 8
+      },
+      {
+        "name": "Studio Name 3",
+        "winCount": 6
+      },
+      {
+        "name": "Studio Name 4",
+        "winCount": 3
+      }
+    ]
+  },
+  "winningInterval": {
+    "min": [
+      {
+        "producer": "Producer Name",
+        "interval": 9,
+        "previousWin": 2018,
+        "followingWin": 2019
+      }
+    ],
+    "max": [
+      {
+        "producer": "Producer Name",
+        "interval": 99,
+        "previousWin": 1900,
+        "followingWin": 1999
+      }
+    ]
+  },
+  "movieOfTheYear": [
+    {
+      "id":99,
+      "year":1990,
+      "title":"Movie Title",
+      "studios":["Studio Name"],
+      "producers":[" Producer Name "],
+      "winner":true
     }
+  ]
 }

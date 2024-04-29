@@ -1,8 +1,8 @@
 [
-    {
-        "id": "main",
-        "routes": [
-            "get-movies:success"
-        ]
-    }
+	{
+		"id": "main",
+		"routes": [
+			"get-movies:success"
+		]
+	}
 ]

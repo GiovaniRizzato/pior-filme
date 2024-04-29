@@ -43,8 +43,8 @@ export class MovieService {
   }
 
   // Método para obter os vencedores de determinado ano
-  getWinnersByYear(isWinner: boolean, year: number): Observable<Movie> {
-    return this.http.get<Movie>(environment.apiUrl, {
+  getWinnersByYear(isWinner: boolean, year: number): Observable<Movie[]> {
+    return this.http.get<Movie[]>(environment.apiUrl, {
       params: new HttpParams()
         .set('winner', isWinner)
         .set('year', year)
